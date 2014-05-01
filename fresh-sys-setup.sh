@@ -1,8 +1,10 @@
 echo "
 
  ... Downloading webmin"
-wget http://prdownloads.sourceforge.net/webadmin/webmin-1.680.tar.gz
-echo  "... don't forget to install webmin"
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.680_all.deb
+sudo apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions libapt-pkg-perl
+sudo dpkg --install webmin_1.680_all.deb
+rm webmin_1.680_all.deb
 echo
 echo "
 

@@ -9,7 +9,7 @@ echo
 echo "
 
  ... Installing system stuff with apt-get"
-sudo apt-get install libgphoto2-2 gphoto2 python-pygame openssh-server samba netatalk graphicsmagick
+sudo apt-get install libgphoto2-2 libgphoto2-2-dev gphoto2 python-pygame openssh-server samba netatalk graphicsmagick
 
 echo
 echo "

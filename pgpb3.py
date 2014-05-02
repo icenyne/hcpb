@@ -14,9 +14,18 @@ prompt = [ 'Make a fist', 'Look up', 'Close your eyes', 'Look at each other',
 	'Fist bump', 'Wave', 'Smile', 'Frown', 'Look angry', 'Open your mouth' ]
 
 move=True
-if len(sys.argv)>=2:
+if 'nomove' in sys.argv:
 	print 'Not moving files...'
 	move=False
+
+# this should be rolled into the filename function but for now it's here...
+last = eval(open('lastphoto', 'r').read())
+print 'Change current photo number '+str(last)+'?'
+temp = raw_input( 'Enter valid new number or nothing to keep: ')
+if temp not in ['']: 
+	last = eval(temp) 
+	open('lastphoto', 'w').write(str(last))
+
 
 pygame.init()
 screen = pygame.display.set_mode(size)

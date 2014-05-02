@@ -18,5 +18,14 @@ echo "
 git clone https://github.com/alexdu/piggyphoto.git
 echo ... moving piggyphoto
 sudo mv piggyphoto/piggyphoto /usr/lib/python2.7
+rm -rf piggyphoto
+
+echo
+echo ... Adding photo directories...
+mkdir for-print
+mkdir for-phone
+mdkir for-disiplay
+mkdir raw-images
+
 
 

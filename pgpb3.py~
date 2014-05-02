@@ -90,9 +90,9 @@ while 1:
 #	progsprite = pygame.sprite.RenderPlain(prog)
 #	progress = 0
 #	
-	while (queue[filename].isAlive() ): 
-		time.sleep(1)
-		print 'processing...'
+#	while (queue[filename].isAlive() ): 
+#		time.sleep(1)
+#		print 'processing...'
 #
 #		try:
 #		  displayimage(screen, filename+'_display.jpg', size)

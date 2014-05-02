@@ -9,7 +9,7 @@ echo
 echo "
 
  ... Installing system stuff with apt-get"
-sudo apt-get install libgphoto2-2 libgphoto2-2-dev gphoto2 python-pygame openssh-server samba netatalk graphicsmagick lighttpd
+sudo apt-get install libgphoto2-2 libgphoto2-2-dev gphoto2 python-pygame openssh-server samba netatalk graphicsmagick lighttpd gimp
 
 echo
 echo "
@@ -18,6 +18,7 @@ echo "
 git clone https://github.com/alexdu/piggyphoto.git
 echo ... moving piggyphoto
 sudo mv piggyphoto/piggyphoto /usr/lib/python2.7
+rm -rf piggyphoto
 
 echo
 echo ... Adding photo directories...

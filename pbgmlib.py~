@@ -69,8 +69,23 @@ def process_image(filename, i):
 		display_4upHD(filename, i)
 		print_4upbig(filename, i)
 
-# function to make full HD (1980x1080) display 4-tile-up
+# function to make full HD (1280x720) display 4-tile-up
 def display_4upHD(filename, partial=None):
+	x1, x2, y1, y2 = 124, 652, 12, 373
+	loc = ['+'+str(x1)+'+'+str(y1)+' ', '+'+str(x1)+'+'+str(y2)+' ', 
+		'+'+str(x2)+'+'+str(y1)+' ', '+'+str(x2)+'+'+str(y2)+' ']
+        for i in range(4):
+		cmd = 'gm composite -resize 756x504 -geometry  ' 
+		cmd = cmd + loc[i] + filename + '_' + suffix[i] + '.jpg '
+		if i==0: cmd = cmd + ' images/backscreen-hd.jpg'
+		else: cmd = cmd + ' boutput.jpg'
+        	cmd = cmd + ' -quality 100 boutput.jpg'
+	        if (partial==None or partial==i): shellcmd(cmd)
+	if (partial==None or partial>3):
+		shellcmd('gm composite -geometry +783+365 -resize x350 images/overlay-disp.png  boutput.jpg -quality 95 ' + filename + '_display.jpg')
+
+# function to make full HD (1920x1080) display 4-tile-up
+def display_4upfullHD(filename, partial=None):
 	x1, x2, y1, y2 = 186, 978, 18, 560
 	loc = ['+'+str(x1)+'+'+str(y1)+' ', '+'+str(x1)+'+'+str(y2)+' ', 
 		'+'+str(x2)+'+'+str(y1)+' ', '+'+str(x2)+'+'+str(y2)+' ']
@@ -113,8 +128,9 @@ def print_4upbig(filename, partial=None, twostrip=False, nice=False, block=False
 
 def print_4upbigall(filename, i):
 	print_4upbig(filename, twostrip=True, nice=True, block=True)
-#	move_files(filename, path='/media/photobooth/', copy=True)	
-	move_files(filename, path='', copy=False)
+	move_files(filename, path='/media/PHOTOBOOTH/', copy=True)	
+	move_files(filename, path='/media/files-n-stuff/', copy=True)
+	move_files(filename, path='/media/backup/', copy=False)
 	print 'Deleting flag files...'
 	shellcmd('rm '+ filename+'_*_done')
 	

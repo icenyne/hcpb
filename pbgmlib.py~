@@ -20,7 +20,7 @@ def new_filename(storename='lastphoto', increment=True):
 	return filename
 
 # move files into local subdirectories and SAMBA share at path
-def move_files(filename, path='/media/photobooth/', copy=True):
+def move_files(filename, path='/media/PHOTOBOOTH/', copy=True):
       if copy: cmd='cp '
       else: cmd='mv '
       try:
